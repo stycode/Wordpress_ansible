@@ -1,0 +1,5 @@
+- name: "Atualiza pacotes e Instala biblioteca python-mysqldb"
+  apt: name=python-mysqldb state=latest install_recommends=yes update_cache=yes
+
+- name: "Cria /opt/wordpress"
+  file: dest="{{ wordpress_path }}" mode=755 state=directory owner=www-data

@@ -1,0 +1,13 @@
+- hosts: all
+  sudo: True
+  user: vagrant
+  vars:
+    wordpress_path: /opt/wordpress
+  vars_files:
+    - vars/mysql.yml
+  roles:
+    - common
+    - mysql
+    - php
+    - nginx
+    - wordpress
